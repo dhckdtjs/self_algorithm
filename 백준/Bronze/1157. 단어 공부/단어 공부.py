@@ -1,25 +1,11 @@
-str = input()
-uStr = str.upper()
+word = input().upper()
+word_list= list(set(word))
+cnt = []
+for i in word_list:
+    count = word.count
+    cnt.append(count(i))
 
-alphabets = [0] * 26
-ft_max = 0
-cnt = 0
-c = '?'
-
-
-for i in uStr : 
-    alpha = ord(i)
-    alphabets[alpha - ord('A')] += 1
-for k in alphabets :
-    if(ft_max < k):
-        ft_max = k
-
-for i in range(0,len(alphabets)) : 
-    if(ft_max == alphabets[i]):
-        c = chr(i + ord('A'))
-        cnt += 1
-
-if cnt > 1 :
+if cnt.count(max(cnt))>1:
     print('?')
-else : 
-    print(c)
+else:
+    print(word_list[cnt.index(max(cnt))])
