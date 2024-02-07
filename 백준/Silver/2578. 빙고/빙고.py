@@ -1,6 +1,5 @@
 # 빙고
 import sys
-input=sys.stdin.readline
 def is_bingo1(arr):
     bingo_cnt1 = 0
     for i in range(5):
@@ -35,8 +34,8 @@ def is_bingo4(arr):
     if Sum == 0:
         bingo_cnt4+=1
     return bingo_cnt4
-bingo = [list(map(int,input().rstrip('\n').split())) for _ in range(5)]
-check = [list(map(int,input().rstrip('\n').split())) for _ in range(5)]
+bingo = [list(map(int,input().split())) for _ in range(5)]
+check = [list(map(int,input().split())) for _ in range(5)]
 cnt = 0
 
 for r in range(5):
