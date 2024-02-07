@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 31120 KB, 시간: 60 ms
+메모리: 31120 KB, 시간: 40 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 2월 8일 00:02:32
+2024년 2월 8일 00:33:53
 
 ### 문제 설명
 
@@ -28,7 +28,7 @@
 
 <p>차례로 수를 지워가다가 같은 가로줄, 세로줄 또는 대각선 위에 있는 5개의 모든 수가 지워지는 경우 그 줄에 선을 긋는다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="width: 218px; height: 218px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/b5ffac7e-7db4-4d54-bf2b-63ac7d6807d8/-/preview/" style="width: 218px; height: 218px;"></p>
 
 <p>이러한 선이 세 개 이상 그어지는 순간 "빙고"라고 외치는데, 가장 먼저 외치는 사람이 게임의 승자가 된다.</p>
 

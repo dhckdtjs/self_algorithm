@@ -35,20 +35,19 @@ def is_bingo4(arr):
     if Sum == 0:
         bingo_cnt4+=1
     return bingo_cnt4
-bingo = [list(map(int,input().split())) for _ in range(5)]
-check = []
-for _ in range(5):
-    check += list(map(int,input().split())) 
+bingo = [list(map(int,input().rstrip('\n').split())) for _ in range(5)]
+check = [list(map(int,input().rstrip('\n').split())) for _ in range(5)]
 cnt = 0
 
-for h in range(25):
-    now = check[h]
-    for i in range(5):
-        for j in range(5):
-            if bingo[i][j] == now:
-                bingo[i][j] = 0
-                cnt+=1
-    if is_bingo1(bingo)+is_bingo2(bingo)+is_bingo3(bingo)+is_bingo4(bingo)  >= 3:
-        print(cnt)
-        sys.exit()
+for r in range(5):
+    for c in range(5):
+        now = check[r][c]
+        for i in range(5):
+            for j in range(5):
+                if bingo[i][j] == now:
+                    bingo[i][j] = 0
+                    cnt+=1
+        if is_bingo1(bingo)+is_bingo2(bingo)+is_bingo3(bingo)+is_bingo4(bingo)  >= 3:
+            print(cnt)
+            sys.exit()
         
