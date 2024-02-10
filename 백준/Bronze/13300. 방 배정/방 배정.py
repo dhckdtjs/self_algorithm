@@ -17,8 +17,11 @@ for _ in range(N):
 for k in range(12):
     if room_list[k] == 0:
         room_list[k] = 0
-    elif room_list[k]>K:
+    elif room_list[k]%K==0:
+        room_list[k] = room_list[k]//K
+    elif room_list[k]>K and room_list[k]%K !=0:
         room_list[k] = (room_list[k]//K)+1
+    
     else:
         room_list[k] = 1
 Sum = 0
