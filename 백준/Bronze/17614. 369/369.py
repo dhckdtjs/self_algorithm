@@ -6,14 +6,10 @@ input = sys.stdin.readline
 n = int(input())
 result = 1
 cnt = 0
+check = '369'
 while result<=n:
-    check = str(result)
-    for k in check:
-        if k == '3':
-            cnt+=1
-        if k == '6':
-            cnt+=1
-        if k == '9':
+    for k in str(result):
+        if k in check:
             cnt+=1
     if result == n:
         break
