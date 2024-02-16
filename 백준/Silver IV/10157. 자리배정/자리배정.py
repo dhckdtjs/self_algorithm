@@ -19,12 +19,10 @@ while num<x*y:
         seat[row][col] = num
     else:
         direct = (direct+1)%4
-
+if K>y*x:
+    print(0)
 for row in range(y):
     for col in range(x):
-        if K>y*x:
-            print(0)
-            exit(0)
-        elif seat[row][col] == K:
+        if seat[row][col] == K:
             print(col+1,y-row)
         
