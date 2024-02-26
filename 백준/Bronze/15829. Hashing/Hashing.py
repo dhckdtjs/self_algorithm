@@ -11,4 +11,4 @@ res = 0
 for k in range(len(string)):
     if string[k] in hashing_dic:
         res+=31**(k)*hashing_dic.get(string[k])
-print(res)
+print(res%1234567891)
