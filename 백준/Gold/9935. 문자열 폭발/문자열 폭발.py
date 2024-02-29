@@ -13,8 +13,7 @@ bomb = str(input())
 n = len(bomb)
 m = len(sen)
 res = check_bomb()
-if len(res) == 0:
+if not res:
     print('FRULA')
 else:
-    for k in res:
-        print(k,end='')
+    print(''.join(res))
