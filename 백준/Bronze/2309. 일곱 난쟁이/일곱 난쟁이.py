@@ -1,34 +1,15 @@
-little_list = []
-
-def powerset(idx):
-    s = 0
-    global result
-    res = []
-    if idx == N:
-        for i in range(N):
-            if c[i]:
-                s+=little_list[i]
-                res.append(little_list[i])
-                if s>100:
-                    return
-        if len(res) == 7 and s == 100:
-            result = res
-        return
-
-    c[idx] = 0
-    powerset(idx+1)
-    c[idx] = 1
-    powerset(idx+1)
-
-
-
+per_list = []
 for _ in range(9):
-    little = int(input())
-    little_list.append(little)
-little_list.sort()
-N = len(little_list)
-c = [0]*N
-result = []
-powerset(0)
-for k in result:
-    print(k)
+    person = int(input())
+    per_list.append(person)
+per_list.sort()
+n = len(per_list)
+total = sum(per_list) - 100
+for i in range(n-1):
+    for j in range(i+1,n):
+        if per_list[i]+per_list[j] == total:
+            rm1 = (per_list[i])
+            rm2 = (per_list[j])
+for k in per_list:
+    if k != rm1 and k != rm2:
+        print(k)
