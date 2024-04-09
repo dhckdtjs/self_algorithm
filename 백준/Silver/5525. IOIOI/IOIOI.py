@@ -2,16 +2,19 @@
 import sys
 input = sys.stdin.readline
 n = int(input())
-check = 'IO'*n+'I'
 m = int(input())
 sen = input().strip()
-# print(sen)
-l = len(check)
 cnt = 0
-for k in range(m):
-    stack = []
-    if sen[k] == 'I':
-        stack.append(sen[k:k+l])
-        if stack == [check]:
-            cnt+=1
-print(cnt)
+i = 0
+ans = 0
+while i<m-1:
+    if sen[i:i+3] =='IOI':
+        i+=2
+        cnt+=1
+        if cnt == n:
+            ans+=1
+            cnt-=1
+    else:
+        i+=1
+        cnt = 0
+print(ans)
