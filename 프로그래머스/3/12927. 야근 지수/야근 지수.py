@@ -1,18 +1,19 @@
 def solution(n, works):
     l = len(works)
-    Max = max(works)
-    work_dit = {i : 0 for i in range(Max+1)}
-    for k in works:
-        work_dit[k]+=1
+    maxx = max(works)
+    work_dict = {i:0 for i in range(maxx+1) }
+    for w in works:
+        work_dict[w]+=1
+    res = 0
     for t in range(n):
-        work_dit[Max-1] +=1
-        work_dit[Max]-=1
-        if work_dit[Max] == 0:
-            Max-=1
-            if Max<=0:
-                return 0
-    total = 0
-    for work in work_dit:
-        if work_dit[work]:
-            total+=work**2*work_dit[work]
-    return total
+        if maxx>0:
+            work_dict[maxx] -=1
+            work_dict[maxx-1] +=1
+            if not work_dict[maxx]:
+                maxx-=1
+        else:
+            break
+    for num in work_dict:
+        res += num**2*work_dict[num]
+                
+    return res
