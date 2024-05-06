@@ -1,26 +1,27 @@
 import sys
+from collections import deque
 input = sys.stdin.readline
 n,m,r = map(int,input().strip().split())
-arr = [list(map(int,input().strip().split())) for _ in range(n)]
-l = min(n,m)//2
-from collections import deque
-ans = [[0]*m for _ in range(n)]
-for k in range(l):
+arr = [list(map(int,input().strip().split())) for  _ in range(n)]
+paper = [[0]*m for _ in range(n)]
+l = min(m,n)//2
+for i in range(l):
     q = deque()
-    q.extend(arr[k][k:m-k])
-    for lst in arr[k+1:n-k-1]:
-        q.append(lst[m-k-1])
-    q.extend(arr[n-k-1][k:m-k][::-1])
-    for lst in arr[k+1:n-k-1][::-1]:
-        q.append(lst[k])
+    q.extend(arr[i][i:m-i])
+    for k in range(i+1,n-i-1):
+        q.append(arr[k][m-i-1])
+    q.extend(arr[n-i-1][i:m-i][::-1])
+    for k in range(n-i-2,i,-1):
+        q.append(arr[k][i])
+
     q.rotate(-r)
-    for j in range(k,m-k):
-        ans[k][j] = q.popleft()
-    for j in range(k+1,n-k-1):
-        ans[j][m-k-1] = q.popleft()
-    for j in range(m-k-1,k-1,-1):
-        ans[n-k-1][j] = q.popleft()
-    for j in range(n-k-2,k,-1):
-        ans[j][k] = q.popleft()
-for i in range(n):
-    print(' '.join(map(str,ans[i])))
+    for j in range(i,m-i):
+        paper[i][j] = q.popleft()
+    for j in range(i+1,n-i-1):
+        paper[j][m-i-1] = q.popleft()
+    for j in range(m-i-1,i-1,-1):
+        paper[n-i-1][j] = q.popleft()
+    for j in range(n-i-2,i,-1):
+        paper[j][i] = q.popleft()
+for w in paper:
+    print(' '.join(map(str,w)))
