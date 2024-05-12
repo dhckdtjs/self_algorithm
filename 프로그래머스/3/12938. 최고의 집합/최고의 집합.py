@@ -2,10 +2,11 @@ def solution(n, s):
     if s < n:
         return [-1]
     
-    quotient, remainder = divmod(s, n)
-    result = [quotient] * n
+    div, r = divmod(s, n)
+    print(div,r)
+    result = [div] * n
     
-    for i in range(remainder):
+    for i in range(r):
         result[i] += 1
     
     return sorted(result)
